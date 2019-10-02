@@ -26,6 +26,7 @@ class Form extends Component {
     }
     render() {
         const { taskName, startDate, endDate } = this.state;
+        //TO-DO: ära piira siin kuupäeva sisestamise valikuid. Tabel peaks suutma kuvada ka taske, mis antud kvartalisse ei mahu või mahuvad osaliselt
         return (
             <form>
                 <label>Add new task:</label>

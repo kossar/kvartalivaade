@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 const TableHeader = () => {
     
+    //TO-DO: siin võiks olla mingi kavalam viis, kuidas tabeli päis kokku pannakse
+    // mõtle dünaamiliselt, et kui tegemist ei ole aasta esimese kvartaliga? või kui vaates oleks vaja näidata 4 kuud või 5 kuud?
     return (
     <thead>
       <tr>
@@ -36,10 +38,30 @@ function FormatDate(oldDate) {
         let newDate = oldDate.toString().split('-').reverse().join('-');
     return newDate.replace(/-/g, '.');
 }
+function getWeekNumber(d){
+    var dayNum = d.getUTCDay() || 7;
+    d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+    var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+    return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
+  }
 
 const TableBody = props => {
     const rows = props.taskData.map((row, index) =>{
-        
+        row.startWeek = getWeekNumber(new Date(row.startDate));
+        row.endWeek = getWeekNumber(new Date(row.endDate));
+
+        let classCol = [];
+        for(let i=0;i<13;i++){
+
+            //TO-DO: siia vaja tingimust, millal lahter värvitakse
+            // if(???){
+            //     classCol.push("colored");    
+            // }
+            // else{
+                classCol.push("nocolor");
+            // }
+        }
+
         return (
             <tr key={index}>
                 <td>
@@ -48,19 +70,9 @@ const TableBody = props => {
                 <th>{row.taskName}</th>
                 <td className="start">{FormatDate(row.startDate)}</td>
                 <td className="end">{FormatDate(row.endDate)}</td>
-                <td>{row.one}</td>
-                <td>{row.two}</td>
-                <td>{row.three}</td>
-                <td>{row.four}</td>
-                <td>{row.five}</td>
-                <td>{row.six}</td>
-                <td>{row.seven}</td>
-                <td>{row.eight}</td>
-                <td>{row.nine}</td>
-                <td>{row.ten}</td>
-                <td>{row.eleven}</td>
-                <td>{row.twelve}</td>
-                <td>{row.thirteen}</td>
+                {classCol.map(className => {
+                    return <td className={className}></td>
+                })}
             </tr>
         )
     })
