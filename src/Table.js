@@ -41,25 +41,31 @@ function FormatDate(oldDate) {
     let newDate = oldDate.toString().split('-').reverse().join('-');
     return newDate.replace(/-/g, '.');
 }
+
 function getWeekNumber(d){
     var dayNum = d.getUTCDay() || 7;
     d.setUTCDate(d.getUTCDate() + 4 - dayNum);
     var yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
     return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
   }
-
+function getYear(d){
+    let startYear = d.getUTCFullYear();
+    return startYear
+}
 const TableBody = props => {
     const rows = props.taskData.map((row, index) =>{
         row.startWeek = getWeekNumber(new Date(row.startDate));
         row.endWeek = getWeekNumber(new Date(row.endDate));
-
+        row.startYear = getYear(new Date(row.startDate));
+        console.log(row.startYear);
         let classCol = [];
 
         for(let i=1;i<=13;i++){
             //TO-DO: siia vaja tingimust, millal lahter värvitakse
             //Done 
-            if(i >= row.startWeek && i <= row.endWeek){
+            if(row.startYear === 2019 && i >= row.startWeek && i <= row.endWeek || row.startYear < 2019 && i <= row.endWeek){
                 classCol.push("colored");    
+                
             }
             else{
                 classCol.push("nocolor");
