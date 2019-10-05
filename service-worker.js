@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/kvartalivaade/precache-manifest.a974f3d7df0b5ec6a40d18282d909214.js"
+  "/kvartalivaade/precache-manifest.f580aacb28072e1db6d490ab1b24e33c.js"
 );
 
 self.addEventListener('message', (event) => {

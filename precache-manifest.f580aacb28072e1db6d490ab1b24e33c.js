@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e3b5a1cd03aa09e3f68ab2d7a514672",
+    "revision": "58a6caedb4a867c37e94c74bab8c21ce",
     "url": "/kvartalivaade/index.html"
   },
   {
-    "revision": "d6ad720144b0be2b81fd",
+    "revision": "a22c0dcc0477d6875690",
     "url": "/kvartalivaade/static/css/main.42ef6cf2.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kvartalivaade/static/js/2.26544584.chunk.js"
   },
   {
-    "revision": "d6ad720144b0be2b81fd",
-    "url": "/kvartalivaade/static/js/main.670a7eb2.chunk.js"
+    "revision": "a22c0dcc0477d6875690",
+    "url": "/kvartalivaade/static/js/main.00bf652f.chunk.js"
   },
   {
     "revision": "ad2e02b540789eb35a94",

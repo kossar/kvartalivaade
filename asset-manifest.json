@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/kvartalivaade/static/css/main.42ef6cf2.chunk.css",
-    "main.js": "/kvartalivaade/static/js/main.670a7eb2.chunk.js",
-    "main.js.map": "/kvartalivaade/static/js/main.670a7eb2.chunk.js.map",
+    "main.js": "/kvartalivaade/static/js/main.00bf652f.chunk.js",
+    "main.js.map": "/kvartalivaade/static/js/main.00bf652f.chunk.js.map",
     "runtime-main.js": "/kvartalivaade/static/js/runtime-main.eb3d8f9d.js",
     "runtime-main.js.map": "/kvartalivaade/static/js/runtime-main.eb3d8f9d.js.map",
     "static/js/2.26544584.chunk.js": "/kvartalivaade/static/js/2.26544584.chunk.js",
     "static/js/2.26544584.chunk.js.map": "/kvartalivaade/static/js/2.26544584.chunk.js.map",
     "index.html": "/kvartalivaade/index.html",
-    "precache-manifest.a974f3d7df0b5ec6a40d18282d909214.js": "/kvartalivaade/precache-manifest.a974f3d7df0b5ec6a40d18282d909214.js",
+    "precache-manifest.f580aacb28072e1db6d490ab1b24e33c.js": "/kvartalivaade/precache-manifest.f580aacb28072e1db6d490ab1b24e33c.js",
     "service-worker.js": "/kvartalivaade/service-worker.js",
     "static/css/main.42ef6cf2.chunk.css.map": "/kvartalivaade/static/css/main.42ef6cf2.chunk.css.map"
   }
