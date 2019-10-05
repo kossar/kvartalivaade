@@ -1,37 +1,56 @@
-
+body {
+  background: #EDF2EB;
+}
 .container {
   width: 100%;
   height: 100%;
   align-content: center;
   align-items: center;
 }
+/* ==== Table ====*/
 table {
   margin-top: 10%;
   margin-left: 10%;
   border-collapse: collapse;
   width: 80%;
 }
+/* Month row */
+thead tr:first-child th:not(:first-child) {
+  background-color: #00ACFF;
+}
+/* Weeks row */
+thead tr:not(:first-child) {
+  background-color: #00BCF5;
+}
+
+/* - */
 th {
   font-weight: 500;
 }
-tr:nth-child(even) {
+tbody tr:nth-child(even){
   background: #B9E9FF
 }
-td, th {
-  border: 1px solid lightgray;
+
+td, th:not(:first-child) {
+  border: 1px solid darkgray;
 }
 td:nth-of-type(1) {
   border: 0;
-  background: white;
+  background: #EDF2EB;
 }
-
+th {
+  padding: 6px 0px;
+}
 th:nth-child(n+5) {
   width: 5%;
 }
 td{
   text-align: center;
 }
+/* End of Table  */
 
+
+/*  ====== Buttons ====== */
 button, input[type="button"] {
   border: none;
   color: white;
@@ -78,8 +97,10 @@ input[type=text], input[type="date"] {
   margin-right: 15px;
 }
 
-input[type="date"] {
+input[type="date"],input[type="text"] {
   width: 150px;
+  background-color: #E1E3E6;
+  border: none;
 }
 td.colored{
   background-color: red;

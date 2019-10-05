@@ -1,3 +1,2 @@
 Kvartalivaade
 
-Pooleli....

@@ -19,7 +19,7 @@ class App extends Component {
       {
         taskName: 'Task 3',
         startDate: '2019-01-28',
-        endDate: '2019-03-01',
+        endDate: '2019-03-20',
       },
     ]
   }

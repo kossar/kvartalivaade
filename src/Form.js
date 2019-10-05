@@ -20,13 +20,30 @@ class Form extends Component {
               })
         }
     
+    
     submitForm = () => {
         this.props.handleSubmit(this.state)
         this.setState(this.initialState)
     }
+
+    /*
+    Proovisin seda teha, aga ilmselt vale lähenemine, pean hetkel kooliasjadele keskenduma ja pole aega sellega tegeleda.
+    Tahtsin et onclick kutsuks selle funktsiooni välja ja kui kõik väljad on täidetud ja algus kuupäev väiksem lõpu omast
+    siis submitiks. Rohkem ei jõua kahjuks teha hetkel. 
+
+    formValidation = () => {
+        if(this.taskName === '' ){
+            return alert('Please check fields');
+        }
+        else {
+            this.submitForm();
+        } 
+    }*/
+
     render() {
         const { taskName, startDate, endDate } = this.state;
         //TO-DO: ära piira siin kuupäeva sisestamise valikuid. Tabel peaks suutma kuvada ka taske, mis antud kvartalisse ei mahu või mahuvad osaliselt
+        // Done
         return (
             <form>
                 <label>Add new task:</label>
@@ -39,16 +56,12 @@ class Form extends Component {
                 <input 
                     type="date"
                     name="startDate"
-                    min="2019-01-01"
-                    max="2019-03-30"
                     required
                     value={startDate}
                     onChange={this.handleChange} />
                 <input 
                     type="date"
                     name="endDate"
-                    min="2019-01-01"
-                    max="2019-03-30"
                     required
                     value={endDate}
                     onChange={this.handleChange} />

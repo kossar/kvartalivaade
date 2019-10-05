@@ -4,38 +4,41 @@ const TableHeader = () => {
     
     //TO-DO: siin võiks olla mingi kavalam viis, kuidas tabeli päis kokku pannakse
     // mõtle dünaamiliselt, et kui tegemist ei ole aasta esimese kvartaliga? või kui vaates oleks vaja näidata 4 kuud või 5 kuud?
+     const months = ['', 'Jan', 'Feb', 'Mar'];
+     
+     //For colspan
+     function span(month){
+        if(month === '' || month === 'Feb'){
+            return "4"
+        }
+        else{
+            return '5'
+        }
+    } 
+   
+    let weekNumbers = [];
+     for(let i = 1; i <= 13; i++){
+        weekNumbers[i - 1] = weekNumbers.push(i);
+    }
+    
     return (
+        
     <thead>
       <tr>
-        <td colSpan="4"></td>
-        <th colSpan="5">Jan</th>
-        <th colSpan="4">Feb</th>
-        <th colSpan="5">Mar</th>
+        { months.map(month => <th colSpan={span(month)}>{month}</th> )}
       </tr>
       <tr>
         <td></td>
         <th scope="col">Task Name</th>
         <th scope="col">Start Date</th>
         <th scope="col">End Date</th>
-        <th scope="col">1</th>
-        <th scope="col">2</th>
-        <th scope="col">3</th>
-        <th scope="col">4</th>
-        <th scope="col">5</th>
-        <th scope="col">6</th>
-        <th scope="col">7</th>
-        <th scope="col">8</th>
-        <th scope="col">9</th>
-        <th scope="col">10</th>
-        <th scope="col">11</th>
-        <th scope="col">12</th>
-        <th scope="col">13</th>
+        {weekNumbers.map(weekNumber => <th scope="col">{weekNumber}</th>)}
       </tr>
     </thead>
     )
 }
 function FormatDate(oldDate) {
-        let newDate = oldDate.toString().split('-').reverse().join('-');
+    let newDate = oldDate.toString().split('-').reverse().join('-');
     return newDate.replace(/-/g, '.');
 }
 function getWeekNumber(d){
@@ -51,16 +54,17 @@ const TableBody = props => {
         row.endWeek = getWeekNumber(new Date(row.endDate));
 
         let classCol = [];
-        for(let i=0;i<13;i++){
 
+        for(let i=1;i<=13;i++){
             //TO-DO: siia vaja tingimust, millal lahter värvitakse
-            // if(???){
-            //     classCol.push("colored");    
-            // }
-            // else{
+            //Done 
+            if(i >= row.startWeek && i <= row.endWeek){
+                classCol.push("colored");    
+            }
+            else{
                 classCol.push("nocolor");
-            // }
-        }
+            }
+        } 
 
         return (
             <tr key={index}>
